@@ -33,13 +33,13 @@ In the sample before, we read from ES cluster, **documents** index, where docume
 a **date** type field (recommend use [Ingest pipelines](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/ingest.html)),
 then we look for all documents that have a field value **last_update** greater than the value stored in `/opt/logstash/last_run/elastic jdbc_documents" `.
 
-####Required parameters:
+#### Required parameters:
    * `hosts`: ES cluster url
    * `index`: ES index
    * `tracking_column`: Date field to tracking in ES index
    * `last_run_metadata_path` : File path where stored the last value from last hist readed from ES index. By the default have the date `1960-01-01`
 
-####Optional parameters:
+#### Optional parameters:
    * All [logstash-input-elasticsearch](https://rubygems.org/gems/logstash-input-elasticsearch) parameters can use in this plugins.
    * `query`: By the default we use a bool query where we get a hits with `tracking column` greater that last value stored in `last_run_metadata_path`. 
    you can insert a query, but keep in mind that your query always be appended with the default query ( *if you don't need search by tracking column,
