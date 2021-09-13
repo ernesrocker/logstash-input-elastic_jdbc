@@ -1,6 +1,8 @@
-# Logstash Plugin
+# Logstash input plugin
 [GitHub](https://github.com/ernesrocker/logstash-input-elastic_jdbc).
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
+
+RubyGems repository [logstash-input-elastic_jdbc](https://rubygems.org/gems/logstash-input-elastic_jdbc)
 
 It is fully free and fully open source.
 
