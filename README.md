@@ -13,7 +13,8 @@ sudo /usr/share/logstash/bin/logstash-plugin install logstash-input-elastic_jdbc
 
 ## Documentation
 This plugin inherit of elasticsearch(**ES**) input plugin, and added a tracking_column
-using in jdbc input plugin for make a query to obtain the updates values
+using in jdbc input plugin for make a query to obtain the updates values.
+
 Sample :
 ```logstash
   input{
@@ -46,6 +47,7 @@ then we look for all documents that have a field value **last_update** greater t
    * `query`: By the default we use a bool query where we get a hits with `tracking column` greater that last value stored in `last_run_metadata_path`. 
    you can insert a query, but keep in mind that your query always be appended with the default query ( *if you don't need search by tracking column,
    please use [logstash-input-elasticsearch](https://rubygems.org/gems/logstash-input-elasticsearch) plugin*). 
+   
    Sample, for this query parameter ``query => '{"query":{"range":{"created":{"gte":"2021-08-13T00:17:58+00:00"}}}}'``, 
    the final query using this plugin would be:
     
@@ -61,7 +63,7 @@ then we look for all documents that have a field value **last_update** greater t
        sort: [{"last_update"=>{:order=>"asc"}}]
       }
    ```
-   **Note:** If you insert a ranking attribute within the query, we always overwrite it with the ranking values shown above.
+   **Note:** If you insert a sort statement inside the query, we always overwrite it with the sort statement value that shown above.
     
 ### 1. Plugin Developement and Testing
 
