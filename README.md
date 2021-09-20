@@ -8,7 +8,7 @@ It is fully free and fully open source.
 
 ## How install
 ```sh
-sudo /usr/share/logstash/bin/logstash-plugin install logstash-input-elastic_jdbc.gem
+sudo /usr/share/logstash/bin/logstash-plugin install logstash-input-elastic_jdbc
 ```
 
 ## Documentation
